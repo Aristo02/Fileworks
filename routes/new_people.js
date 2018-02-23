@@ -17,7 +17,7 @@ router.post('/new_people', function(req, res, next) {
     description: req.body.bicc,
     status:  true,
     };
-
+    
     var minhaBatata = new tasksMongo(newPeople);
   minhaBatata.save(function (err, batatoid) {
 	  if (err) return console.error(err);
