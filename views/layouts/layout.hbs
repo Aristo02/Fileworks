@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{title}}</title>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Styles Plugins -->
+    <link rel='stylesheet' href='/plugins/bootstrap-3.1.1/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/plugins/animate/animate.css' />
+
+    <!-- Styles Icons -->
+    <link rel='stylesheet' href='/stylesheets/icons/font-awesome-4.7.0/css/font-awesome.css' />
+
+    <!-- Styles Global -->
+    <link rel='stylesheet' href='/stylesheets/4G.css' />
+    <link rel='stylesheet' href='/stylesheets/theme.css' />
+
+
+
+</head>
+<!--[if lt IE 7 ]>
+<body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]>
+<body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]>
+<body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<body class="">
+
+    <!-- Init main-wrapper -->
+    <div id="main-wrapper">
+
+        <div class="wrapper">
+            <div class="container">
+
+                <div class="navbar navbar-inverse navbar-fixed-top">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+                        <a class="navbar-brand" href="">
+                            <img src="/images/logo/logo_filework_small.png" alt="" border="0" />
+                        </a>
+                    </div>
+                    <div class="hidden-xs">
+                        <ul class="nav navbar-nav pull-right">
+
+                            <li class="hidden-phone">
+                                <a href="" title="Entidade" role="button">
+                                    <div class="avatar-entity">
+                                        <img src="" alt="" border="0" />
+                                    </div>
+                                    <span class="entity">Associação A Serrana</span>
+                                    <div class="communities">
+                                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                                        Colectividade:
+                                        <span class="type-communities">(Recreativa)</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li id="fat-menu" class="dropdown user user-menu">
+                                <a href="#" title="Usuário" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="{{dadosTemp.usuarioLogado.photo}}" class="user-image" alt="User Image" border="0">
+                                    <span class="hidden-xs"> {{dadosTemp.usuarioLogado.name}}
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </span>
+                                    <br>
+                                    <span class="type_user">({{dadosTemp.usuarioLogado.type_user}})</span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a tabindex="-1" href="">
+                                            <i class="fa fa-bookmark" aria-hidden="true"></i> Meu Perfil
+                                        </a>
+                                    </li>
+                                    <li class="divider visible-phone"></li>
+                                    <li>
+                                        <a tabindex="-1" href="" data-toggle="modal">
+                                            <i class="fa fa-life-ring" aria-hidden="true"></i> Ajuda</a>
+                                    </li>
+                                    <li class="divider visible-phone"></li>
+                                    <li>
+                                        <a tabindex="-1" href="">
+                                            <i class="fa fa-power-off"></i> Sair</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <div id="main-menu">
+
+                    <div id="phone-navigation" class="visible-xs">
+                        <ul id="dashboard-menu" class="nav nav-list">
+                            {{#each dadosTemp.menuList as |menu| }}
+                            <li class="">
+                                <a href="{{menu.href}}">
+                                    <i class="{{menu.icon}}" aria-hidden="true"></i>
+                                    <span class="caption">{{menu.name_menu}}</span>
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+
+                    <ul class="nav nav-tabs hidden-xs">
+                        {{#each dadosTemp.menuList as |menu| }}
+                        <li class="">
+                            <a href="{{menu.href}}">
+                                <i class="{{menu.icon}}" aria-hidden="true"></i>
+                                <span class="caption">{{menu.name_menu}}</span>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- init content -->
+            <div class="content fadeIn">
+                {{{body}}} </div>
+            <!-- End content -->
+
+            <div id="footer">
+                <hr>
+                <p class="pull-right">Filework. &copy; 2018
+                    <a href="#">{{title}}</a> / VERSION - 0.5 (Beta)</p>
+
+                <ul class=" pull-left navbar-link footer-nav">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-life-ring" aria-hidden="true"></i> Ajuda</a>
+                        <a href="">
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i> Termos e Condições</a>
+                        <a href="">
+                            <i class="fa fa-quote-left" aria-hidden="true"></i> Politica de Privacidade</a>
+                        <a href="">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- End main-wrapper -->
+
+    <!-- Scripts Plugins -->
+
+    <script src="/plugins/jquery/jquery-1.11.2.min.js"></script>
+    <script src="/plugins/bootstrap-3.1.1/js/bootstrap.js"></script>
+
+    <!-- Scripts Theme -->
+    <script src="/javascripts/site.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,408 @@
+<!-- Style View New People -->
+<link rel='stylesheet' href='/stylesheets/views/new_contact.css' />
+
+<!-- Init View New People -->
+<div class="row">
+    <div class="col-sm-9">
+        <div class="page-header">
+            <div class="row">
+
+                <div class="col-md-4 text-left">
+                    <h1>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i> Nova Pessoa</h1>
+                </div>
+
+                <hr class="visible-xs visible-sm">
+
+                <div class="col-xs-12 col-md-8">
+                    <a class="btn btn-success pull-right" type="submit" form="myform" name="btnAddPeople" value="Guardar">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+                    <a href="/peoples" class="btn btn-default pull-right m-right10">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i> Cancelar</a>
+                </div>
+
+                <!-- Spacer -->
+                <div class="visible-xs visible-sm clearfix"></div>
+
+            </div>
+        </div>
+        <!-- /page-header -->
+
+        <!-- Init Form Contact -->
+
+        <div class="new-contact">
+            <form id="myform" action="/new_people" method="post">
+                <button type="submit" name="btnAddPeople" value="Guardar3333333333333">333333333333333333333</button>
+                <div class="content-form">
+                    <h4 class="fieldset"> Geral</h4>
+                    <!-- Form Fotografia -->
+                    <div class="row">
+                        <label class="col-xs-12 col-md-3 control-label">Fotografia</label>
+                        <div class="col-xs-12 col-md-9">
+                            <div class="photo">
+                                <div class="img-uploader disabled" data-id="divUploadImage">
+                                    <img class="img-preview image-people" width="100px" height="100px" src="/images/avatar/avatar-person.png" id="imgUserTumb">
+                                    <input class="upload" type="file" name="upload-image" title="Pesquisar Fotografia...">
+                                    <div class="over">
+                                        <i class="fa fa-camera" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Nome -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Nome
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-9">
+                            <input class="form-control" type="text" name="nome" maxlength="80" size="32" placeholder="Nome" value="" autofocus="true">
+                        </div>
+                    </div>
+
+                    <!-- Form BI / CC -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Bilhete Identidade / Cartão Cidadão</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" type="text" name="bicc" placeholder="BI / CC" value="" maxlength="15">
+                        </div>
+                        <label class="col-xs-12 col-md-3 control-label">Nª Contribuinte</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" type="text" name="nif" placeholder="NIF" value="" maxlength="11" pattern="number">
+                        </div>
+                    </div>
+
+                    <!-- Form Segurança Social / Utente de Saúde -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Segurança Social</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" type="text" name="nss" placeholder="N.º Segurança Social" value="" maxlength="11" pattern="number">
+                        </div>
+                        <label class="col-xs-12 col-md-3 control-label">Utente de Saúde</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" type="text" name="nus" placeholder="N.º Utente de Saúde" value="" maxlength="11" pattern="number">
+                        </div>
+                    </div>
+
+                    <!-- Form Sexo / Data de Nascimento -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Sexo
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-3">
+                            <select class="select form-control" name="sexo" placeholder="Sexo" index-init="1">
+                                <option value="null" disabled selected>Sexo</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Masculino">Masculino</option>
+                            </select>
+                        </div>
+                        <label class="col-xs-12 col-md-3 control-label">Data de Nascimento</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" style="padding-right:0px;" type="date" name="data_nascimento" placeholder="Data de Nascimento"
+                                value="">
+                        </div>
+                    </div>
+
+                    <h4 class="fieldset">Dados Internos</h4>
+
+                    <!-- Form Codigo -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Código
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-4">
+                            <input class="form-control" type="text" name="codigo" placeholder="Número Referência" maxlength="20" value="159">
+                        </div>
+                    </div>
+
+                    <!-- Form Data Inscrição / Data da Saida -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Data Inscrição
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" style="padding-right:0px;" type="date" name="data_inscricao" placeholder="dd/mm/aaaa" value="">
+                        </div>
+                        <label class="col-xs-12 col-md-3 control-label">Saida </label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" style="padding-right:0px;" type="date" name="data_saida" placeholder="dd/mm/aaaa" value="">
+                        </div>
+                    </div>
+
+                    <!-- Form Tipo de Contacto -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Tipo de Pessoa
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-9">
+                            <select class="select form-control" name="TipoContact" placeholder="Tipo de Contacto" index-init="1">
+                                <option value="Tipo do contacto" disabled selected>Tipo do Contacto</option>
+                                <option value="Presidente">Presidente</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Criança">Criança</option>
+                                <option value="Director">Director</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="Fundador">Fundador</option>
+                                <option value="Honorário">Honorário</option>
+                                <option value="Reformado">Reformado</option>
+                                <option value="Sócio">Sócio</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Form Estado do Contacto -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Estado da Pessoa
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-9">
+                            <select class="select form-control" name="EstadoContact" placeholder="Estado do Contacto" index-init="1">
+                                <option value="Estado de Contacto" disabled selected>Estado do contacto</option>
+                                <option value="">Activo</option>
+                                <option value="">Bloqueado</option>
+                                <option value="">Falecido</option>
+                                <option value="">Inactivo</option>
+                                <option value="">Inscrição Caducada</option>
+                                <option value="">Removido</option>
+                                <option value="">Suspenso</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 class="fieldset">Localização</h4>
+
+                    <!-- Form País -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">País
+                            <span class="req">*</span>
+                        </label>
+                        <div class="col-xs-12 col-md-4">
+                            <select class="select form-control" name="pais" placeholder="País" index-init="1" onchange="ctt.onchangePais(this);">
+                                <option value="0" disabled selected>Escolha um país...</option>
+                                <option value="1">Portugal</option>
+                                <option value="5">Bélgica</option>
+                                <option value="2">Brasil</option>
+                                <option value="4">Espanha</option>
+                                <option value="6">França</option>
+                                <option value="3">Holanda</option>
+                                <option value="7">Luxemburgo</option>
+                                <option value="8">Suiça</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Form Código Postal / Freguesia / Concelho / Distrito -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Código Postal</label>
+                        <div class="col-xs-12 col-md-2">
+                            <input class="form-control" type="text" name="codigo_postal" placeholder="Código Postal" value="" maxlength="10">
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="select form-control" type="text" name="ctt_freguesia" placeholder="Freguesia" value="">
+                        </div>
+                        <div class="col-xs-12 col-md-2">
+                            <input class="select form-control" type="text" name="ctt_concelho" placeholder="Concelho" value="">
+                        </div>
+                        <div class="col-xs-12 col-md-2">
+                            <input class="select form-control" type="text" name="ctt_distrito" placeholder="Distrito" value="">
+                        </div>
+                    </div>
+
+                    <!-- Form Endereço / Nª -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Endereço</label>
+                        <div class="col-xs-12 col-md-6">
+                            <input class="form-control" type="text" name="morada" placeholder="Morada" value="" maxlength="550">
+                        </div>
+                        <div class="col-xs-12 col-md-2">
+                            <input class="form-control" type="text" name="num" placeholder="Nª Porta" value="">
+                        </div>
+                    </div>
+
+                    <!-- Form Andar / Fracção -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label"></label>
+                        <div class="col-xs-12 col-md-2">
+                            <select class="select form-control" name="andar" placeholder="Andar" index-init="1" onchange="ctt.andar(this);">
+                                <option value="0" disabled selected>Andar</option>
+                                <option value="1">RC</option>
+                                <option value="5">1ª</option>
+                                <option value="2">2ª</option>
+                                <option value="4">3ª</option>
+                                <option value="6">4ª</option>
+                                <option value="3">5ª</option>
+                                <option value="7">6ª</option>
+                                <option value="8">7ª</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-md-2">
+                            <select class="select form-control" name="fraccao" placeholder="Fracção" index-init="1" onchange="ctt.fraccao(this);">
+                                <option value="0" disabled selected>Fracção</option>
+                                <option value="1">E</option>
+                                <option value="5">D</option>
+                                <option value="2">F</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 class="fieldset">Contactos</h4>
+
+                    <!-- Form Telemóvel / Outros -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Telemóvel</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="telem1" type="text" value="" maxlength="60" placeholder="">
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="telem2" type="text" value="" maxlength="60" placeholder="2ª Telemóvel">
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="telem3" type="text" value="" maxlength="60" placeholder="3ª Telemóvel">
+                        </div>
+                    </div>
+
+                    <!-- Form Telefone / Outros -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Telefone</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="telef1" type="text" value="" maxlength="60" placeholder="">
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="telef2" type="text" value="" maxlength="60" placeholder="2ª Telefone">
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="telef3" type="text" value="" maxlength="60" placeholder="3ª Telefone">
+                        </div>
+                    </div>
+
+                    <!-- Form Fax / Outro -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Fax</label>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="fax1" type="text" value="" maxlength="60" placeholder="">
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <input class="form-control" name="fax2" type="text" value="" maxlength="60" placeholder="2ª Fax">
+                        </div>
+                    </div>
+
+                    <!-- Form Email / Outro -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">E-mail</label>
+                        <div class="col-xs-12 col-md-4">
+                            <input class="form-control emailnormal" type="email" name="email" maxlength="80" size="32" placeholder="Email" value="" pattern="email">
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <input class="form-control emailnormal" type="email" name="email2" maxlength="80" size="32" placeholder="Outro" value=""
+                                pattern="email">
+                        </div>
+                    </div>
+
+                    <h4 class="fieldset">Informação Bancária</h4>
+
+                    <!-- Form Nome Banco / Nª Conta -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Nome do Banco</label>
+                        <div class="col-xs-12 col-md-4">
+                            <input class="form-control" type="text" name="nib" placeholder="" value="">
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <input class="form-control" type="text" name="nconta" placeholder="Nª Conta" value="">
+                        </div>
+                    </div>
+
+                    <!-- Form Iban -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">IBAN</label>
+                        <div class="col-xs-12 col-md-6">
+                            <input class="form-control" type="text" name="nib" placeholder="Número de Identificação Bancária" value="">
+
+                        </div>
+                    </div>
+
+
+                    <h4 class="fieldset">Informação Médica</h4>
+
+                    <!-- Form Grupo Sanguíneo -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label"></label>
+                        <div class="col-xs-12 col-md-6">
+                            <select class="select form-control" name="saude_gruposangue" placeholder="Grupo Sanguíneo" index-init="1">
+                                <option value="-1" disabled selected>Grupo Sanguíneo</option>
+                                <option value="O-" {selected}>O-</option>
+                                <option value="O+" {selected}>O+</option>
+                                <option value="A-" {selected}>A-</option>
+                                <option value="A+" {selected}>A+</option>
+                                <option value="B-" {selected}>B-</option>
+                                <option value="B+" {selected}>B+</option>
+                                <option value="AB-" {selected}>AB-</option>
+                                <option value="AB+" {selected}>AB+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 class="fieldset">Extras</h4>
+
+                    <!-- Form Descrição -->
+                    <div class="row form-group">
+                        <label class="col-xs-12 col-md-3 control-label">Descrição</label>
+                        <div class="col-xs-12 col-md-9">
+                            <textarea class="form-control" name="observacoes" placeholder="Descrição ou uma nota sobre a pessoa..." rows="4" col="33"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+
+        </div>
+
+        <!-- End Form Contact -->
+
+    </div>
+
+    <div class="col-sm-3">
+
+        <div class="reg-sidebar-inner text-center">
+
+            <div class="promo-text-box">
+                <i class="fa fa-archive fa-3x text-warning" aria-hidden="true"></i>
+                <h3>
+                    <strong>Gestão dos Contactos</strong>
+                </h3>
+                <p>Aqui no filework encontra uma
+                    <br> forma fácil de arquivar seus
+                    <br> contatos (Sócios,Parceiros, etc...)
+                    <br> em um servidor.</p>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading uppercase">
+                    <h5>
+                        <strong>Campos obrigatório</strong>
+                    </h5>
+                </div>
+                <div class="panel-content">
+                    <div class="panel-body text-left">
+                        <ul class="list-check">
+                            <li>
+                                <span class="req">*</span> Nome</li>
+                            <li>
+                                <span class="req">*</span> Sexo</li>
+                            <li>
+                                <span class="req">*</span> Código Sócio</li>
+                            <li>
+                                <span class="req">*</span> Tipo de Sócio</li>
+                            <li>
+                                <span class="req">*</span> Estado do Sócio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- End View New People -->

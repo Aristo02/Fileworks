@@ -1,0 +1,41 @@
+/************************************************************************/
+/************************** Style Contacts ******************************/
+/************************************************************************/
+
+#search-list-contacts{
+height: 100%;
+}
+.contact-list-item:hover{
+    background: #fbfbfb;
+}
+.size-40 {
+    width: 40px;
+    text-align: center;
+}
+.size-80 {
+    width: 80px;
+}
+.size-170 {
+    width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+.indent-row .table-contacts > thead > tr > th:first-child, .indent-row .table-contacts > thead > tr > td:first-child, .indent-row .table-contacts > tbody > tr > th:first-child, .indent-row .table-contacts > tbody > tr > td:first-child, .indent-row .table-contacts > tfoot > tr > th:first-child, .indent-row .table-contacts > tfoot > tr > td:first-child {
+    padding-left: 18px;
+}
+.table-contacts img.avatar {
+    margin: -18px 0;
+    border: 1px solid #ffffff;
+}
+.contact-creator {
+    letter-spacing: .2px;
+}
+.button-options .dropdown-menu {
+    margin-left: -135px;
+}
+
+/****************************************************************************/
+/************************** End Style Contacts ******************************/
+/****************************************************************************/

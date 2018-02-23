@@ -1,0 +1,262 @@
+<!-- Style View Contacts -->
+<link rel='stylesheet' href='/stylesheets/views/contacts.css' />
+
+<!-- Init View Peoples -->
+
+
+<div class="row">
+    <div class="col-sm-10">
+        <div class="page-header">
+            <div class="row">
+
+                <div class="col-md-4 text-left">
+                    <h1>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Pessoas</h1>
+                </div>
+
+                <hr class="visible-xs visible-sm">
+
+                <div class="col-xs-12 col-md-2 pull-right">
+                    <a href="/new_people" class="btn btn-default btn-block">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        Nova Pessoa</a>
+                </div>
+
+                <!-- Spacer -->
+                <div class="visible-xs visible-sm clearfix"></div>
+
+                <form action="" class="col-xs-12 col-md-6 page-header-form pull-right">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                        <input type="text" placeholder="Procurar..." class="form-control">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div id="list-people" class="content-list">
+
+            <div class="counter">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <strong>
+                            <span class="pull-left" id="paginatorCount"> {{dadosTemp.peopleList.length}} <br> {{#each dadosTemp.peopleList}} {{this.length}} {{/each}}</span>
+                        </strong> Pessoas de
+                        <strong>10</strong>
+                        <a href="" class="ViewSelected">
+                            <span id="numberOfSelected">0</span> selecionados</a>
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                        <ul class="pagination pull-right">
+                            <li>
+                                <a href="#" title="Anterior">«</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>...</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Seguinte">»</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selected-actions">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+
+                        <div class="action-btn">
+                            <a href="" class="hidden-xs hidden-sm" data-toggle="modal" data-target="#confirmDelete">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Apagar Selecionados</a>
+                            <a href="" class="hidden-xs hidden-sm" data-toggle="modal" data-target="#confirmPrint">
+                                <i class="fa fa-print" aria-hidden="true"></i> Imprimir Todos</a>
+                            <a href="#send_email" class="hidden-xs hidden-sm" data-toggle="modal" data-target="#confirmSendEmail">
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                Enviar Emails</a>
+                            <div class="select-box pull-right">
+                                <div class="col-selectbox">
+                                    <a class="btn btn-default btn-sm">
+                                        <i class="fa fa-filter" aria-hidden="true"></i>
+                                        Pesquisa Avançada</a>
+                                </div>
+                                <div class="col-selectbox">
+                                    <select class="form-control input-sm">
+                                        <option>Sort By</option>
+                                        <option>Sort By</option>
+                                        <option>Sort By</option>
+                                    </select>
+                                </div>
+                                <div class="col-selectbox">
+                                    <select class="form-control input-sm">
+                                        <option>25 Records</option>
+                                        <option>10 Records</option>
+                                        <option>50 Records</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Init Search List Contacts -->
+            <div id="search-list-contacts">
+                <div class="table-responsive table-striped">
+
+                    <table class="table table-lists table-unbordered table-separate table-hover">
+
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    <label>
+                                        <input id="chkVisible" type="checkbox" title="Selecionar Todos">
+                                    </label>
+                                </th>
+                                <th class="text-center"> Foto</th>
+                                <th class="text-center">Código</th>
+                                <th class="text-center">Nome</th>
+                                <th class="text-center">Tipo</th>
+                                <th class="text-center">Estado</th>
+                                <th class="text-center">Pago</th>
+                                <th class="text-center">Crédito(s)</th>
+                                <th class="text-center">Dívida</th>
+                                <th class="text-center">Opções</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <!-- Init contact List Item -->
+
+                            {{# each dadosTemp.peopleList as |people| }}
+                            <tr class="contact-list-item">
+                                <td class="size-40">
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" name="name1" value="value1">
+                                    </div>
+                                </td>
+                                <td class="text-center size-80">
+                                    <img class="avatar img-circle" src="{{people.foto}}" alt="" title="image_contact">
+                                </td>
+                                <td class="text-center">
+                                    <div class="code-contact">{{people.codigo}}</div>
+                                </td>
+                                <td class="text-center">
+                                    <a href="" title="" class="name-contact name">
+                                        <strong>{{people.nome}}</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge badge-custom">{{people.tipo}}</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="state-contact">{{people.estado}}</div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="paid-contact">
+                                        <span class="label label-default">{{people.pago}}</span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="credits-contact">
+                                        <span class="label label-success">{{people.credito}}</span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="divide-contact">
+                                        <a href="" data-toggle="modal" class="label label-important" title="Enviar Email">{{people.divida}}</a>
+                                    </div>
+                                </td>
+                                <td class="text-center size-80">
+                                    <!-- Single button -->
+                                    <div class="btn-group button-options">
+                                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">Editar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Adicionar Nota</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Imprimir</a>
+                                            </li>
+                                            <li role="separator" class="divider"></li>
+                                            <li>
+                                                <a href="#">Apagar</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+
+                            <!-- End Contact List Item -->
+
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+            </div>
+            <!-- End Search List Peoples -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="pagination pull-right">
+                        <li>
+                            <a href="#" title="Anterior">«</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <strong>...</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Seguinte">»</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- End View Peoples -->
